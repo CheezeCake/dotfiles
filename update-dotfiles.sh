@@ -9,7 +9,7 @@ usage()
 	exit 1
 }
 
-if test $# != 1 || test $1 != "pull" || test $1 != "push"; then
+if test $# != "1" || test $1 != "pull" && test $1 != "push"; then
 	usage
 fi
 
@@ -21,10 +21,12 @@ then
 	git $1
 fi
 
-FILES=`git ls-files | sed 's/.*.sh//' | sed 's/README//'`
+FILES=`git ls-files | sed 's/^.*\.sh$//' | sed 's/^README$//'`
+PUSH="false"
 
 for file in $FILES
 do
+	echo "debug file=$file"
 	if test $1 = "pull"
 	then
 		DEST=~/$file
@@ -39,8 +41,10 @@ do
 		cmp $DEST $SRC > /dev/null
 		if test $? != 0
 		then
-			echo "$DEST saved as $DEST.old"
-			mv $DEST $DEST.old
+			if test $1 = "pull"; then
+				echo "$DEST saved as $DEST.old"
+				mv $DEST $DEST.old
+			fi
 			cp $SRC $DEST
 		fi
 	else
@@ -48,6 +52,7 @@ do
 			echo "new dotfile: $DEST"
 		else
 			echo "modified: $SRC"
+			PUSH="true"
 		fi
 		cp $SRC $DEST
 	fi
@@ -55,8 +60,13 @@ done
 
 if test $1 = "push"
 then
-	echo "git commit -a"
-	git commit -am 'update'
-	echo "pushing to origin master"
-	git push origin master
+	if test $PUSH = "true"
+	then
+		echo "git commit -a"
+		git commit -am 'update'
+		echo "pushing to origin master"
+		git push origin master
+	else
+		echo "Nothing to push"
+	fi
 fi
