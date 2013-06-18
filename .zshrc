@@ -49,6 +49,7 @@ else
 	plugins=(git)
 	export PATH=$PATH:~/bin
 fi
+
 export EDITOR='vim'
 export LSCOLORS='exfxcxdxbxegedabagacad' #only works with BSD/OSX ls
 
