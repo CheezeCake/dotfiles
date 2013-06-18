@@ -21,7 +21,7 @@ then
 	git $1
 fi
 
-FILES=`git ls-files | sed 's/.*.sh//'`
+FILES=`git ls-files | sed 's/.*.sh//' | sed 's/README//'`
 
 for file in $FILES
 do
