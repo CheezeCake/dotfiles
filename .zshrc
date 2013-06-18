@@ -53,4 +53,4 @@ fi
 export EDITOR='vim'
 export LSCOLORS='exfxcxdxbxegedabagacad' #only works with BSD/OSX ls
 
-echo "Welcome to `uname -srm` on `echo $HOSTNAME | sed 's/\..*//'` !"
+echo "Welcome to `uname -srm` on `hostname | sed 's/\..*//'` !"
