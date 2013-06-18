@@ -9,7 +9,11 @@ usage()
 	exit 1
 }
 
-if test $# != "1" || test $1 != "pull" && test $1 != "push"; then
+if test $# != "1"; then
+	usage
+fi
+
+if test $1 != "pull" && test $1 != "push"; then
 	usage
 fi
 
@@ -26,7 +30,7 @@ PUSH="false"
 
 for file in $FILES
 do
-	echo "debug file=$file"
+	echo "debug file = $file"
 	if test $1 = "pull"
 	then
 		DEST=~/$file
@@ -44,16 +48,14 @@ do
 			if test $1 = "pull"; then
 				echo "$DEST saved as $DEST.old"
 				mv $DEST $DEST.old
+			else
+				echo "modified: $SRC"
+				PUSH="true"
 			fi
 			cp $SRC $DEST
 		fi
 	else
-		if test $1 = "pull"; then
-			echo "new dotfile: $DEST"
-		else
-			echo "modified: $SRC"
-			PUSH="true"
-		fi
+		echo "new dotfile: $DEST"
 		cp $SRC $DEST
 	fi
 done
