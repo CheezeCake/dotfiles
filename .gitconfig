@@ -1,0 +1,13 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[user]
+	name = CheezeCake
+	email = emmanuel.nicolet@gmail.com
+[alias]
+	br=branch
+	ci=commit
+	co=checkout
+	df=diff
+	st=status
