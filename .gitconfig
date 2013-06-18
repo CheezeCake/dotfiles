@@ -11,3 +11,5 @@
 	co=checkout
 	df=diff
 	st=status
+[push]
+	default = simple
