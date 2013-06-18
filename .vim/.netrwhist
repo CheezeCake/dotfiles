@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/manu/.vim'
-let g:netrw_dirhist_2='/Users/manu/Documents/Progs/C++/Puissance4-L2/src'
-let g:netrw_dirhist_3='/Users/manu/.oh-my-zsh/plugins/osx'
-let g:netrw_dirhist_4='/Users/manu/.oh-my-zsh/plugins/git'
-let g:netrw_dirhist_5='/Users/manu/.git'

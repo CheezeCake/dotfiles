@@ -30,7 +30,6 @@ PUSH="false"
 
 for file in $FILES
 do
-	echo "debug file = $file"
 	if test $1 = "pull"
 	then
 		DEST=~/$file
