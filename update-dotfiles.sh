@@ -3,22 +3,60 @@
 #ce script va dans ~/bin
 #ne pas oublier d'ajouter ~/bin à PATH
 
-cd ~/.dotfiles
-git pull
+usage()
+{
+	echo "usage: update-dotfiles pull|push"
+	exit 1
+}
 
-git ls-files | while read file
+if test $# != 1 || test $1 != "pull" || test $1 != "push"; then
+	usage
+fi
+
+cd ~/.dotfiles
+
+if test $1 = "pull"
+then
+	echo "pulling from: "`git remote -v | head -1 | cut -f2 | cut -d ' ' -f1`
+	git $1
+fi
+
+FILES=`git ls-files | sed 's/.*.sh//'`
+
+for file in $FILES
 do
-	if test -f ~/$file
+	if test $1 = "pull"
 	then
-		cmp ~/$file $file > /dev/null
+		DEST=~/$file
+		SRC=$file
+	else
+		DEST=$file
+		SRC=~/$file
+	fi
+
+	if test -f $DEST
+	then
+		cmp $DEST $SRC > /dev/null
 		if test $? != 0
 		then
-			echo "~/$file saved as $file.old"
-			mv ~/$file ~/$file.old
-			cp $file ~/$file
+			echo "$DEST saved as $DEST.old"
+			mv $DEST $DEST.old
+			cp $SRC $DEST
 		fi
 	else
-		echo "new dotfile: ~/$file"
-		cp $file ~/$file
+		if test $1 = "pull"; then
+			echo "new dotfile: $DEST"
+		else
+			echo "modified: $SRC"
+		fi
+		cp $SRC $DEST
 	fi
 done
+
+if test $1 = "push"
+then
+	echo "git commit -a"
+	git commit -am 'update'
+	echo "pushing to origin master"
+	git push origin master
+fi
