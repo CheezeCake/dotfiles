@@ -36,9 +36,6 @@ DISABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-source $ZSH/oh-my-zsh.sh
-autoload -U zmv
-
 OS=`uname`
 if test $OS = "Darwin"; then #Max OSX
 	plugins=(git osx brew)
@@ -49,6 +46,9 @@ else
 	plugins=(git)
 	export PATH=$PATH:~/bin
 fi
+
+source $ZSH/oh-my-zsh.sh
+autoload -U zmv
 
 export EDITOR='vim'
 export LSCOLORS='exfxcxdxbxegedabagacad' #only works with BSD/OSX ls
