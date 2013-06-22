@@ -1,36 +1,38 @@
-syntax on				"syntax hightlight
-set nocompatible		"nocompatible with vi
-set background=dark		"background colors
-filetype plugin on		"file type plugin
-
+set nocompatible			"no Vi compatibility
 if $TERM == "xterm-256color"
-	set t_Co=256		"use 256 colors
+	set t_Co=256			"use 256 colors
 else
 	set t_Co=8
 endif
+filetype plugin on			"filetype detection and plugins
+syntax on					"syntax highlighting
+set number					"line numbers
+set mouse=a					"mouse support
+set backspace=indent,eol,start "backspace over anything
 
-"set ignorecase
-set hlsearch			"highlight search matches
-set incsearch			"show matches while typing
-						"the search patern
+"search settings
+set incsearch				"highlight search matches
+set hlsearch				"show matches while typing the search patern
 
-"tabs config
-set tabstop=4
-set shiftwidth=4
-set smartindent			"smart indentation
-
-set mouse=a				"enable mouse support
-set number				"show line numbers
-"set cursorline			"highlight current line
-
-"backspace problems
-set backspace=indent,eol,start
+"indentation
+set tabstop=4				"<Tab> = 4 spaces wide
+set softtabstop=4			"<Tab> = 4 spaces when expandtab is set
+set shiftwidth=4			"shifting whith '<<' and '>>' = 4 spaces wide
+set noexpandtab				"no spaces for indentation
+set cindent					"C-like indentation (clever than smartindent)
 
 "colorscheme
+set background=dark
 colorscheme my_dante
 
-"GET USED TO hjkl !!!
+"mapings
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+
+"file-type specific settings
+
+"assembly: GAS syntax, tabs=8 noexpandtab
+autocmd FileType asm setlocal ft=gas ts=8 sts=8 sw=8 noet
