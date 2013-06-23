@@ -12,14 +12,14 @@ set backspace=indent,eol,start "backspace over anything
 
 "search settings
 set incsearch				"highlight search matches
-set hlsearch				"show matches while typing the search patern
+set hlsearch				"show matches while typing the search pattern
 
 "indentation
 set tabstop=4				"<Tab> = 4 spaces wide
 set softtabstop=4			"<Tab> = 4 spaces when expandtab is set
 set shiftwidth=4			"shifting whith '<<' and '>>' = 4 spaces wide
 set noexpandtab				"no spaces for indentation
-set cindent					"C-like indentation (more clever than smartindent)
+set cindent					"C-like indentation (smarter than ...smartindent)
 
 "colorscheme
 set background=dark
