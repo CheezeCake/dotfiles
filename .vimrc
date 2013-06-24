@@ -11,8 +11,8 @@ set mouse=a					"mouse support
 set backspace=indent,eol,start "backspace over anything
 
 "search settings
-set incsearch				"highlight search matches
-set hlsearch				"show matches while typing the search pattern
+set hlsearch				"highlight search matches
+set incsearch				"show matches while typing the search pattern
 
 "indentation
 set tabstop=4				"<Tab> = 4 spaces wide
