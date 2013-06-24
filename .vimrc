@@ -36,5 +36,5 @@ nnoremap <C-H> :set nohlsearch! <CR>
 
 "file-type specific settings
 
-"assembly: GAS syntax, tabs=8 noexpandtab
+"assembly: GAS syntax (AT&T), tabs=8 noexpandtab
 autocmd FileType asm setlocal ft=gas ts=8 sts=8 sw=8 noet
