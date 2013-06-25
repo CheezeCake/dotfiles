@@ -4,6 +4,7 @@
 " Last Change:  2009 Dec 29
 " Version:      0.8
 " Remark:       Intel compatible instructions only (for now)
+" Modified by CheezeCake
 
 if version < 600
 	syntax clear
@@ -38,7 +39,7 @@ syn keyword gasDirective	.vtable_entry .vtable_inherit .warning .weak .weakref
 syn keyword gasDirectiveStore	.byte .hword .word .int .long .double .short .float
 syn keyword gasDirectiveStore	.string .string8 .string16 .ascii .asciz .comm
 
-syn keyword gasDirectiveMacro	.altmacro .macro .noaltmacro .end .func .endfunc
+syn keyword gasDirectiveMacro	.altmacro .macro .noaltmacro .end .func .endfunc .endm .endmacro
 
 " i*86 directives
 syn keyword gasDirectiveX86	.att_syntax .intel_syntax .att_mnemonic .intel_mnemonic .lcomm
