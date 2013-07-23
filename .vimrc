@@ -38,3 +38,5 @@ nnoremap <C-H> :set nohlsearch! <CR>
 
 "assembly: GAS syntax (AT&T), tabs=8 noexpandtab
 autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
+"perl: no tabs, 4 spaces
+autocmd FileType perl setlocal sts=4 sw=4 et
