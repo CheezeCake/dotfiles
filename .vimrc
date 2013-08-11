@@ -9,6 +9,7 @@ syntax on					"syntax highlighting
 set number					"line numbers
 set mouse=a					"mouse support
 set backspace=indent,eol,start "backspace over anything
+set textwidth=77			"textwidth = 77 columns
 
 "search settings
 set hlsearch				"highlight search matches
