@@ -63,4 +63,8 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 export PAGER='less -is'
 
+#aliases
+alias please='sudo !!'
+
+
 echo "Welcome to `uname -srm` on `hostname | sed 's/\..*//'` !"
