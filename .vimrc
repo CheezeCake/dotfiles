@@ -37,6 +37,9 @@ nnoremap <C-H> :set nohlsearch! <CR>
 
 "file-type specific settings
 
+"C, C++
+autocmd FileType c,cpp ab #d #define\
+			ab #i #include
 "assembly: GAS syntax (AT&T), tabs=8 noexpandtab
 autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
 "perl: no tabs, 4 spaces
