@@ -1,4 +1,13 @@
 set nocompatible			"no Vi compatibility
+
+"Vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'bling/vim-airline'
+"/Vundle
+
 if $TERM == "xterm-256color"
 	set t_Co=256			"use 256 colors
 else
@@ -9,10 +18,9 @@ syntax on					"syntax highlighting
 set number					"line numbers
 set mouse=a					"mouse support
 set backspace=indent,eol,start "backspace over anything
-set textwidth=77			"textwidth = 77 columns
+set textwidth=75			"textwidth = 75 columns
 
 "search settings
-set hlsearch				"highlight search matches
 set incsearch				"show matches while typing the search pattern
 
 "indentation
@@ -38,8 +46,8 @@ nnoremap <C-H> :set nohlsearch! <CR>
 "file-type specific settings
 
 "C, C++
-autocmd FileType c,cpp ab #d #define\
-			ab #i #include
+autocmd FileType c,cpp ab #d #define
+			\ab #i #include
 "assembly: GAS syntax (AT&T), tabs=8 noexpandtab
 autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
 "perl: no tabs, 4 spaces
