@@ -65,7 +65,6 @@ sub pull
     foreach (@repofiles)
     {
         chomp;
-#continue if($_ == "");
         my $f = "$home/$_";
         my $repof = "$dotfilesdir/$_";
 
