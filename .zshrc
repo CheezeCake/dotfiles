@@ -2,7 +2,6 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="cheezecake"
 
-# Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 DISABLE_CORRECTION="true"
 
