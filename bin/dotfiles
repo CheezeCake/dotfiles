@@ -51,7 +51,7 @@ sub push
         if(compare($f, $repof) == 1)
         {
             system "cp", $f, $repof;
-            system @git, "commit", "-am", "update: basename($f)";
+            system @git, "commit", "-am", "update: ".basename($f)."";
             $change = 1;
         } 
     }
