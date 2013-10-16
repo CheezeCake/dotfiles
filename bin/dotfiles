@@ -32,7 +32,7 @@ sub rm
 {
     foreach (@_)
     {
-        system @git, "rm", $_;
+        system @git, "rm", "-f", $_;
         system "rm", "-f", $_ if($delete);
     }
 
