@@ -9,9 +9,7 @@ DISABLE_CORRECTION="true"
 OS=`uname`
 if test $OS = "Darwin"; then #Max OSX
 	plugins=(git osx brew)
-#TODO: hardcode path
-	PATH=`echo $PATH | sed 's/\/usr\/local\/bin://'`
-	export PATH=/usr/local/bin:$PATH:/usr/local/sbin:~/bin
+	export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:/Users/manu/bin'
 	alias gpg='gpg2'
 else
 	plugins=(git)
