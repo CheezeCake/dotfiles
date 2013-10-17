@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
+Bundle 'vim-scripts/STL-Syntax'
 "/Vundle
 
 if $TERM == "xterm-256color"
@@ -34,6 +35,9 @@ set cindent					"C-like indentation (smarter than ...smartindent)
 set background=dark
 colorscheme my_dante
 
+"airline
+let g:airline_theme = 'ubaryd'
+
 "mapings
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -44,7 +48,6 @@ nnoremap <C-H> :set nohlsearch! <CR>
 
 
 "file-type specific settings
-let g:airline_theme = 'ubaryd'
 
 "C, C++
 autocmd FileType c,cpp ab #d #define
