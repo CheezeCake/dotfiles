@@ -20,7 +20,7 @@ sub add
 {
     foreach (@_)
     {
-        system "cp", $_, "$dotfilesdir/$_";
+        system "cp", "-r", $_, "$dotfilesdir/$_";
         system @git, "add", $_;
         print "add: $_\n";
     }
@@ -33,8 +33,8 @@ sub rm
     foreach (@_)
     {
         system @git, "rm", "-f", $_;
-        system "rm", "-f", "$dotfilesdir/$_";
-        system "rm", "-f", $_ if($delete);
+        system "rm", "-rf", "$dotfilesdir/$_";
+        system "rm", "-rf", $_ if($delete);
     }
 
     system @git, "commit", "-am", "rm: @_";
