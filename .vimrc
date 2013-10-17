@@ -26,11 +26,11 @@ set textwidth=75
 set incsearch
 
 "indentation
-set tabstop=4				"<Tab> = 4 spaces wide
-set softtabstop=4			"<Tab> = 4 spaces when expandtab is set
-set shiftwidth=4			"shifting whith '<' and '>' = 4 spaces wide
-set noexpandtab				"no spaces for indentation
-set cindent					"C-like indentation (smarter than ...smartindent)
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+set cindent	
 
 "colorscheme
 set background=dark
