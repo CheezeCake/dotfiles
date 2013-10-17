@@ -26,6 +26,7 @@ sub add
     }
 
     system @git, "commit", "-am", "add: @_";
+    system @git, "push";
 }
 
 sub rm
@@ -38,6 +39,7 @@ sub rm
     }
 
     system @git, "commit", "-am", "rm: @_";
+    system @git, "push";
 }
 
 sub push
