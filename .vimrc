@@ -44,6 +44,7 @@ nnoremap <C-H> :set nohlsearch! <CR>
 
 
 "file-type specific settings
+let g:airline_theme = 'ubaryd'
 
 "C, C++
 autocmd FileType c,cpp ab #d #define
