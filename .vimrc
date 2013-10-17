@@ -37,7 +37,8 @@ set background=dark
 colorscheme my_dante
 
 "airline
-let g:airline_theme = 'ubaryd'
+let g:airline_theme = 'murmur'
+let g:airline_powerline_fonts=1
 
 "mapings
 noremap <Up> <Nop>
@@ -47,11 +48,9 @@ noremap <Right> <Nop>
 nnoremap <C-H> :set nohlsearch! <CR>
 
 
-"file-type specific settings
-
 "assembly: GAS syntax (AT&T)
 autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
-autocmd FileType c,cpp ab #d #define
-			\ab #i #include
+autocmd FileType c,cpp abbr #d #define
+autocmd FileType c,cpp abbr #i #include
 autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
 autocmd FileType perl setlocal sts=4 sw=4 et
