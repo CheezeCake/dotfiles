@@ -13,7 +13,7 @@ my @git = ("git", "--git-dir=$dotfilesdir/.git");
 my @repofiles = `@git ls-files`;
 
 #arguments
-my $delete; 
+my $delete;
 GetOptions('d' => \$delete) or die ("Error in command line arguments\n");
 
 sub add
@@ -56,7 +56,7 @@ sub push
             system "cp", $f, $repof;
             system @git, "commit", "-am", "update: ".basename($f)."";
             $change = 1;
-        } 
+        }
     }
 
     system @git, "push" if($change);
