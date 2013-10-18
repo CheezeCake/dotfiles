@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/STL-Syntax'
 Bundle 'CheezeCake/vim-gas'
+Bundle 'tpope/vim-commentary'
 "/Vundle
 
 if $TERM == "xterm-256color"
