@@ -20,6 +20,7 @@ autoload -U zmv
 
 export EDITOR='vim'
 export LSCOLORS='exfxcxdxbxegedabagacad' #only works with BSD/OSX ls
+export TERM='xterm-256color'
 
 # Color in man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
