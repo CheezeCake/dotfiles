@@ -37,7 +37,7 @@ set cindent
 set background=dark
 colorscheme my_dante
 set cursorline
-hi CursorlineNr ctermfg=White
+hi CursorlineNr ctermfg=White guifg=White
 
 "airline
 let g:airline_theme = 'murmur'
