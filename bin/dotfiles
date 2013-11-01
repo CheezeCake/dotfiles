@@ -1,0 +1,91 @@
+#!/usr/bin/perl -w
+
+use strict;
+use diagnostics;
+use Env;
+use Getopt::Long qw(:config no_ignore_case bundling);
+use File::Compare;
+use File::Basename;
+
+my $home = $ENV{"HOME"};
+my $dotfilesdir = "$home/.dotfiles";
+my @git = ("git", "--git-dir=$dotfilesdir/.git");
+my @repofiles = `@git ls-files`;
+
+#arguments
+my $delete;
+GetOptions('d' => \$delete) or die ("Error in command line arguments\n");
+
+sub add
+{
+    foreach (@_)
+    {
+        system "cp", "-r", $_, "$dotfilesdir/$_";
+        system @git, "add", $_;
+        print "add: $_\n";
+    }
+
+    system @git, "commit", "-am", "add: @_";
+    system @git, "push";
+}
+
+sub rm
+{
+    foreach (@_)
+    {
+        system @git, "rm", "-f", $_;
+        system "rm", "-rf", "$dotfilesdir/$_";
+        system "rm", "-rf", $_ if($delete);
+    }
+
+    system @git, "commit", "-am", "rm: @_";
+    system @git, "push";
+}
+
+sub push
+{
+    my $change = 0;
+    foreach (@repofiles)
+    {
+        chomp;
+        my $f = "$home/$_";
+        my $repof = "$dotfilesdir/$_";
+
+        if(compare($f, $repof) == 1)
+        {
+            system "cp", $f, $repof;
+            system @git, "commit", "-am", "update: ".basename($f)."";
+            $change = 1;
+        }
+    }
+
+    system @git, "push" if($change);
+}
+
+sub pull
+{
+    system @git, "pull";
+    foreach (@repofiles)
+    {
+        chomp;
+        my $f = "$home/$_";
+        my $repof = "$dotfilesdir/$_";
+
+        if(compare($f, $repof) == 1)
+        {
+            system "mv", $f, "$f.old";
+            system "cp", $repof, $f;
+            print "$f saved as $f.old\n";
+        }
+    }
+}
+
+die "usage: dotfiles add|rm|pull|push [file ...]\n" if(scalar(@ARGV) == 0);
+
+my $cmd = shift;
+
+if($cmd eq "add") { &add(@ARGV); }
+elsif($cmd eq "rm") { &rm(@ARGV); }
+elsif($cmd eq "pull") { &pull(); }
+elsif($cmd eq "push") { &push(); }
+else { print "$cmd: unknown command\n"; }

@@ -1,0 +1,18 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[user]
+	name = CheezeCake
+	email = emmanuel.nicolet@gmail.com
+[alias]
+	br = branch
+	cm = commit
+	co = checkout
+	df = diff
+	st = status
+[push]
+	default = simple
+[core]
+	editor = vim
