@@ -20,7 +20,7 @@ syntax on
 set number
 set mouse=a
 set backspace=indent,eol,start
-set textwidth=75
+set textwidth=70
 
 "search settings
 set incsearch
