@@ -24,6 +24,7 @@ set textwidth=70
 
 "search settings
 set incsearch
+set hlsearch
 set ignorecase
 
 "indentation
@@ -50,7 +51,7 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-nnoremap <C-H> :set nohlsearch! <CR>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 
 "assembly: GAS syntax (AT&T)
