@@ -1,31 +1,26 @@
 set nocompatible			"no Vi compatibility
 
-"Vundle
-filetype off
+"Vundle settings
+filetype off "required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/STL-Syntax'
 Bundle 'CheezeCake/vim-gas'
-"/Vundle
 
-if $TERM == "xterm-256color"
-	set t_Co=256
-else
-	set t_Co=8
-endif
-filetype plugin on
-syntax on
+"Display settings
+set t_Co=256
+set background=dark
+set cursorline
 set number
-set mouse=a
-set backspace=indent,eol,start
 set textwidth=70
+set fillchars+=stl:\ ,stlnc:\
 
-"search settings
-set incsearch
-set hlsearch
-set ignorecase
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
 
 "indentation
 set tabstop=4
@@ -34,17 +29,25 @@ set shiftwidth=4
 set noexpandtab
 set cindent	
 
-"colorscheme
-set background=dark
+"general
+set backspace=indent,eol,start
+set ttyfast
+set shell=zsh
+set mouse=a
+set incsearch
+set hlsearch
+set ignorecase
+
+"colorscheme, colors
 colorscheme my_dante
-set cursorline
 hi CursorlineNr ctermfg=White guifg=White
 
-"airline
-let g:airline_theme = 'murmur'
-let g:airline_powerline_fonts=1
-
-set fillchars+=stl:\ ,stlnc:\
+"assembly: GAS syntax (AT&T)
+autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
+autocmd FileType c,cpp abbr #d #define
+autocmd FileType c,cpp abbr #i #include
+autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
+autocmd FileType perl setlocal sts=4 sw=4 et
 
 "mapings
 noremap <Up> <Nop>
@@ -54,9 +57,9 @@ noremap <Right> <Nop>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 
-"assembly: GAS syntax (AT&T)
-autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
-autocmd FileType c,cpp abbr #d #define
-autocmd FileType c,cpp abbr #i #include
-autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
-autocmd FileType perl setlocal sts=4 sw=4 et
+"Plugin configuration
+
+"Airline
+let g:airline_theme = 'murmur'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
