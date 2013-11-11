@@ -41,7 +41,6 @@ set ignorecase
 
 "colorscheme, colors
 colorscheme my_dante
-hi CursorlineNr ctermfg=White guifg=White
 
 "assembly: GAS syntax (AT&T)
 autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
