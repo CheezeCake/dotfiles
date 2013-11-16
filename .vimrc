@@ -17,6 +17,7 @@ set cursorline
 set number
 set textwidth=70
 set fillchars+=stl:\ ,stlnc:\
+set laststatus=2
 
 syntax on
 filetype on
@@ -24,7 +25,7 @@ filetype plugin on
 filetype indent on
 
 "indentation
-set tabstop=4
+ret tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
@@ -33,13 +34,15 @@ set cindent
 "general
 set backspace=indent,eol,start
 set ttyfast
-set shell=zsh
+"set shell=zsh
+set wildmenu
+set wildmode=full
 set mouse=a
 set incsearch
 set hlsearch
 set ignorecase
 
-"colorscheme, colors
+"colorscheme
 colorscheme wombat
 
 "assembly: GAS syntax (AT&T)
