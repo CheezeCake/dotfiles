@@ -42,6 +42,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set noeol binary
+set encoding=utf-8
 
 "colorscheme
 colorscheme wombat
