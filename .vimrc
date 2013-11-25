@@ -41,6 +41,7 @@ set mouse=a
 set incsearch
 set hlsearch
 set ignorecase
+set noeol binary
 
 "colorscheme
 colorscheme wombat
