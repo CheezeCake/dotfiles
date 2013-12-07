@@ -9,6 +9,7 @@ Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/STL-Syntax'
 Bundle 'CheezeCake/vim-gas'
 Bundle 'vim-scripts/OmniCppComplete'
+Bundle 'file:///~/sparkup/vim'
 
 "Display settings
 set t_Co=256
@@ -43,6 +44,7 @@ set hlsearch
 set ignorecase
 set noeol binary
 set encoding=utf-8
+set showcmd
 
 "colorscheme
 colorscheme wombat
