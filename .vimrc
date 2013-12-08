@@ -42,7 +42,6 @@ set mouse=a
 set incsearch
 set hlsearch
 set ignorecase
-set noeol binary
 set encoding=utf-8
 set showcmd
 
@@ -55,6 +54,7 @@ autocmd FileType c,cpp abbr #d #define
 autocmd FileType c,cpp abbr #i #include
 autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
 autocmd FileType perl setlocal sts=4 sw=4 et
+autocmd FileType text set noeol binary
 
 "mapings
 noremap <Up> <Nop>
