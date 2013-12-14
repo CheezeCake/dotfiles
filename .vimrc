@@ -19,6 +19,9 @@ set number
 set textwidth=70
 set fillchars+=stl:\ ,stlnc:\
 set laststatus=2
+if has("gui")
+	set guifont=Droid\ Sans\ Mono\ for\ Powerline
+endif
 
 syntax on
 filetype on
