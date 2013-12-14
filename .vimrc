@@ -9,7 +9,6 @@ Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/STL-Syntax'
 Bundle 'CheezeCake/vim-gas'
 Bundle 'vim-scripts/OmniCppComplete'
-Bundle 'file:///~/sparkup/vim'
 
 "Display settings
 set t_Co=256
