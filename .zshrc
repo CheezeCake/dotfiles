@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="cheezecake"
+ZSH_THEME="cheezecake_sunrise"
+#ZSH_THEME="cheezecake"
 
 # CASE_SENSITIVE="true"
 DISABLE_CORRECTION="true"
