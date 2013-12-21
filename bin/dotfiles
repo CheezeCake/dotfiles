@@ -13,7 +13,8 @@ my @repofiles = `git --git-dir=$dotfilesdir/.git ls-files`;
 
 #arguments
 my $delete;
-GetOptions('d' => \$delete) or die ("Error in command line arguments\n");
+my $force;
+GetOptions('d' => \$delete, 'f' => \$force) or die ("Error in command line arguments\n");
 
 sub add
 {
@@ -21,13 +22,13 @@ sub add
 
     foreach (@_)
     {
-        system "cp", "-r", "$home/$_", "$dotfilesdir/$_";
-        system "git", "add", $_;
+        system 'cp', '-r', "$home/$_", "$dotfilesdir/$_";
+        system 'git', 'add', $_;
         print "add: $_\n";
     }
 
-    system "git", "commit", "-am", "add: @_";
-    system "git", "push";
+    system 'git', 'commit', '-am', "add: @_";
+    system 'git', 'push';
 }
 
 sub rm
@@ -38,13 +39,13 @@ sub rm
     foreach (@_)
     {
         push @rmfiles, $_;
-        system "git", "rm", "-f", $_;
-        system "rm", "-rf", "$dotfilesdir/$_";
-        system "rm", "-rf", "$home/$_" if($delete);
+        system 'git', 'rm', '-f', $_;
+        system 'rm', '-rf', "$dotfilesdir/$_";
+        system 'rm', '-rf', "$home/$_" if($delete);
     }
 
-    system "git", "commit", "-am", "rm: ".join(", ", @rmfiles);
-    system "git", "push";
+    system 'git', 'commit', '-am', 'rm: '.join(", ", @rmfiles);
+    system 'git', 'push';
 }
 
 sub push
@@ -60,20 +61,20 @@ sub push
 
         if(compare($f, $repof) == 1)
         {
-            system "cp", $f, $repof;
-            system "git", "commit", "-am", "update: ".basename($f)."";
+            system 'cp', $f, $repof;
+            system 'git', 'commit', '-am', 'update: '.basename($f);
             $change = 1;
         }
     }
 
-    system "git", "push" if($change);
+    system 'git', 'push' if($change);
 }
 
 sub pull
 {
     chdir $dotfilesdir;
 
-    system "git", "pull";
+    system 'git', 'pull';
     foreach (@repofiles)
     {
         chomp;
@@ -82,8 +83,8 @@ sub pull
 
         if(compare($f, $repof) == 1)
         {
-            system "mv", $f, "$f.old";
-            system "cp", $repof, $f;
+            system 'mv', $f, "$f.old";
+            system 'cp', $repof, $f;
             print "$f saved as $f.old\n";
         }
     }
@@ -94,8 +95,16 @@ die "usage: dotfiles add|rm|pull|push [file ...]\n" if(scalar(@ARGV) == 0);
 
 my $cmd = shift;
 
-if($cmd eq "add") { &add(@ARGV); }
-elsif($cmd eq "rm") { &rm(@ARGV); }
-elsif($cmd eq "pull") { &pull(); }
-elsif($cmd eq "push") { &push(); }
-else { print "$cmd: unknown command\n"; }
+if($cmd eq 'add') { &add(@ARGV); }
+elsif($cmd eq 'rm') { &rm(@ARGV); }
+elsif($cmd eq 'pull') { &pull(); }
+elsif($cmd eq 'push')
+{
+    if($force)
+    {
+        chdir $dotfilesdir;
+        system 'git', 'push';
+    }
+    else { &push(); }
+}
+else { print $cmd, ': unknown command', "\n"; }
