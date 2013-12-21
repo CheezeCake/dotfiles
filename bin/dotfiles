@@ -32,16 +32,18 @@ sub add
 
 sub rm
 {
+    my @rmfiles;
     chdir $dotfilesdir;
 
     foreach (@_)
     {
+        push @rmfiles, $_;
         system "git", "rm", "-f", $_;
         system "rm", "-rf", "$dotfilesdir/$_";
         system "rm", "-rf", "$home/$_" if($delete);
     }
 
-    system "git", "commit", "-am", "rm: $_";
+    system "git", "commit", "-am", "rm: ", join(", ", @rmfiles), "\n";
     system "git", "push";
 }
 
