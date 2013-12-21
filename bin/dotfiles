@@ -41,7 +41,7 @@ sub rm
         system "rm", "-rf", "$home/$_" if($delete);
     }
 
-    system "git", "commit", "-am", "rm: _";
+    system "git", "commit", "-am", "rm: $_";
     system "git", "push";
 }
 
