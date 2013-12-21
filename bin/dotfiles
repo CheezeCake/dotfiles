@@ -43,7 +43,7 @@ sub rm
         system "rm", "-rf", "$home/$_" if($delete);
     }
 
-    system "git", "commit", "-am", "rm: ", join(", ", @rmfiles), "\n";
+    system "git", "commit", "-am", "rm: ".join(", ", @rmfiles);
     system "git", "push";
 }
 
