@@ -7,7 +7,7 @@ ZSH_THEME="cheezecake_sunrise"
 DISABLE_CORRECTION="true"
 
 OS=`uname`
-if test $OS = "Darwin"; then #Max OSX
+if test $OS = "Darwin"; then #Mac OSX
 	plugins=(git osx brew)
 	export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:/Users/manu/bin'
 	alias gpg='gpg2'
