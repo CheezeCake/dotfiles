@@ -46,6 +46,7 @@ set hlsearch
 set ignorecase
 set encoding=utf-8
 set showcmd
+set title
 
 "colorscheme
 colorscheme wombat
