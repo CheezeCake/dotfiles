@@ -64,6 +64,7 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+vnoremap <C-c> "+y
 
 
 "Plugin configuration
