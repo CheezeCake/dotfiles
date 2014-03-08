@@ -57,7 +57,6 @@ autocmd FileType c,cpp abbr #d #define
 autocmd FileType c,cpp abbr #i #include
 autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
 autocmd FileType perl setlocal sts=4 sw=4 et
-autocmd FileType text set noeol binary
 
 "mapings
 noremap <Up> <Nop>
