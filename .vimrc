@@ -4,10 +4,10 @@ set nocompatible			"no Vi compatibility
 filetype off "required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'bling/vim-airline'
-Bundle 'vim-scripts/STL-Syntax'
-Bundle 'CheezeCake/vim-gas'
+Plugin 'gmarik/vundle'
+Plugin 'bling/vim-airline'
+Plugin 'vim-scripts/STL-Syntax'
+Plugin 'CheezeCake/vim-gas'
 "Bundle 'Valloric/YouCompleteMe'
 
 "Display settings
