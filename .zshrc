@@ -6,15 +6,21 @@ ZSH_THEME="cheezecake_sunrise"
 # CASE_SENSITIVE="true"
 DISABLE_CORRECTION="true"
 
-OS=`uname`
-if test $OS = "Darwin"; then #Mac OSX
+case `uname` in
+"Darwin")
 	plugins=(git osx brew)
-	export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:/Users/manu/bin'
+	export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:$HOME/bin
 	alias gpg='gpg2'
-else
+	;;
+"FreeBSD")
+	plugins=(git)
+	export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:$HOME/bin
+	;;
+*)
 	plugins=(git)
 	export PATH=$PATH:~/bin
-fi
+	;;
+esac
 
 source $ZSH/oh-my-zsh.sh
 autoload -U zmv
