@@ -1,1 +1,3 @@
 xterm*faceName: Droid Sans Mono for Powerline: style=Regular: size=9
+xterm*background: black
+xterm*foreground: white
