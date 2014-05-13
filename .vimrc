@@ -15,7 +15,7 @@ set t_Co=256
 set background=dark
 set cursorline
 set number
-set textwidth=70
+"set textwidth=70
 set fillchars+=stl:\ ,stlnc:\
 set laststatus=2
 if has("gui")
