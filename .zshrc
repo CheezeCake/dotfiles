@@ -43,4 +43,7 @@ export PAGER='less -is'
 alias S='sudo'
 alias please='sudo !!'
 
+#Vi mode
+set -o vi
+
 echo "Welcome to `uname -srm` on `hostname | sed 's/\..*//'` !"
