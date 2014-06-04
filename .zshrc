@@ -41,7 +41,6 @@ export PAGER='less -is'
 
 #aliases
 alias S='sudo'
-alias please='sudo !!'
 
 #Vi mode
 set -o vi
