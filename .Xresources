@@ -83,8 +83,8 @@ URxvt*letterSpace:                    -1
 ! URxvt*override-redirect:              boolean
 ! URxvt*pastableTabs:                   boolean
 ! URxvt*perl-eval:                      perl-eval
-URxvt*perl-ext-common:                string
-URxvt*perl-ext:                       string
+URxvt*perl-ext-common:                clipboard
+!URxvt*perl-ext:                       string
 ! URxvt*perl-lib:                       string
 ! URxvt*pointerBlank:                   boolean
 ! URxvt*pointerBlankDelay:              number
