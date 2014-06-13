@@ -32,7 +32,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
-set cindent	
+set cindent
 
 "general
 set backspace=indent,eol,start
@@ -47,6 +47,8 @@ set ignorecase
 set encoding=utf-8
 set showcmd
 set title
+"for tmux
+set t_ut=
 
 "colorscheme
 colorscheme wombat
