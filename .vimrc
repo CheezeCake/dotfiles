@@ -8,6 +8,7 @@ Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/STL-Syntax'
 Plugin 'CheezeCake/vim-gas'
+Plugin 'Lokaltog/vim-distinguished'
 "Bundle 'Valloric/YouCompleteMe'
 
 "Display settings
