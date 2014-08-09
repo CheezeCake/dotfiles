@@ -11,8 +11,8 @@ case `uname` in
 	export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:$HOME/bin
 	alias gpg='gpg2'
 	;;
-*)
-	plugins=(git)
+Linux)
+	plugins=(git archlinux)
 	export PATH=$PATH:~/bin
 	;;
 esac
@@ -36,6 +36,9 @@ export PAGER='less -is'
 
 #aliases
 alias S='sudo'
+alias zshrc='vim ~/.zshrc'
+alias vimrc='vim ~/.vimrc'
+alias make='mk'
 
 #Vi mode
 set -o vi
