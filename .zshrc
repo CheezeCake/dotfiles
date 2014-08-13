@@ -38,7 +38,7 @@ export PAGER='less -is'
 alias S='sudo'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
-alias make='mk'
+alias mk='make'
 
 #Vi mode
 set -o vi
