@@ -11,7 +11,7 @@ case `uname` in
 	export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:$HOME/bin
 	alias gpg='gpg2'
 	;;
-Linux)
+"Linux")
 	plugins=(git archlinux)
 	export PATH=$PATH:~/bin
 	;;
