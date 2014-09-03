@@ -39,6 +39,7 @@ alias S='sudo'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias mk='make'
+alias soff='xset dpms force off' #xorg screen off
 
 #Vi mode
 set -o vi
