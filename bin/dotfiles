@@ -90,7 +90,22 @@ sub pull
     }
 }
 
-die "usage: dotfiles add|rm|pull|push [file ...]\n" if(scalar(@ARGV) == 0);
+sub clean
+{
+    foreach (@repofiles)
+    {
+        chomp;
+        my $file = "$home/$_.old";
+
+        if (-e $file)
+        {
+            print 'rm ', $file, "\n";
+            system 'rm', $file;
+        }
+    }
+}
+
+die "usage: dotfiles add|rm|pull|push|clean [file ...]\n" if(scalar(@ARGV) == 0);
 (-e $home) or die "cant locale homedir (environement variable HOME is not set)\n";
 
 my $cmd = shift;
@@ -107,4 +122,5 @@ elsif($cmd eq 'push')
     }
     else { &push(); }
 }
+elsif($cmd eq 'clean') { &clean(); }
 else { print $cmd, ': unknown command', "\n"; }
