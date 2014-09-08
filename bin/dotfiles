@@ -20,8 +20,7 @@ sub add
 {
     chdir $dotfilesdir;
 
-    foreach (@_)
-    {
+    foreach (@_) {
         system 'cp', '-r', "$home/$_", "$dotfilesdir/$_";
         system 'git', 'add', $_;
         print "add: $_\n";
@@ -36,8 +35,7 @@ sub rm
     my @rmfiles;
     chdir $dotfilesdir;
 
-    foreach (@_)
-    {
+    foreach (@_) {
         push @rmfiles, $_;
         system 'git', 'rm', '-f', $_;
         system 'rm', '-rf', "$dotfilesdir/$_";
@@ -53,14 +51,12 @@ sub push
     chdir $dotfilesdir;
 
     my $change = 0;
-    foreach (@repofiles)
-    {
+    foreach (@repofiles) {
         chomp;
         my $f = "$home/$_";
         my $repof = "$dotfilesdir/$_";
 
-        if(compare($f, $repof) == 1)
-        {
+        if(compare($f, $repof) == 1) {
             system 'cp', $f, $repof;
             system 'git', 'commit', '-am', 'update: '.basename($f);
             $change = 1;
@@ -75,14 +71,12 @@ sub pull
     chdir $dotfilesdir;
 
     system 'git', 'pull';
-    foreach (@repofiles)
-    {
+    foreach (@repofiles) {
         chomp;
         my $f = "$home/$_";
         my $repof = "$dotfilesdir/$_";
 
-        if(compare($f, $repof) == 1)
-        {
+        if(compare($f, $repof) == 1) {
             system 'mv', $f, "$f.old";
             system 'cp', $repof, $f;
             print "$f saved as $f.old\n";
@@ -92,13 +86,11 @@ sub pull
 
 sub clean
 {
-    foreach (@repofiles)
-    {
+    foreach (@repofiles) {
         chomp;
         my $file = "$home/$_.old";
 
-        if (-e $file)
-        {
+        if (-e $file) {
             print 'rm ', $file, "\n";
             system 'rm', $file;
         }
@@ -110,17 +102,25 @@ die "usage: dotfiles add|rm|pull|push|clean [file ...]\n" if(scalar(@ARGV) == 0)
 
 my $cmd = shift;
 
-if($cmd eq 'add') { &add(@ARGV); }
-elsif($cmd eq 'rm') { &rm(@ARGV); }
-elsif($cmd eq 'pull') { &pull(); }
-elsif($cmd eq 'push')
-{
-    if($force)
-    {
+if($cmd eq 'add') {
+    &add(@ARGV);
+}
+elsif($cmd eq 'rm') {
+    &rm(@ARGV);
+}
+elsif($cmd eq 'pull') {
+    &pull();
+}
+elsif($cmd eq 'push') {
+    if($force) {
         chdir $dotfilesdir;
         system 'git', 'push';
     }
     else { &push(); }
 }
-elsif($cmd eq 'clean') { &clean(); }
-else { print $cmd, ': unknown command', "\n"; }
+elsif($cmd eq 'clean') {
+    &clean();
+}
+else {
+    print $cmd, ': unknown command', "\n";
+}
