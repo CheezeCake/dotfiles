@@ -26,23 +26,21 @@ sub add
         print "add: $_\n";
     }
 
-    system 'git', 'commit', '-am', "add: @_";
+    system 'git', 'commit', '-am', 'add: '.join(", ", @_);
     system 'git', 'push';
 }
 
 sub rm
 {
-    my @rmfiles;
     chdir $dotfilesdir;
 
     foreach (@_) {
-        push @rmfiles, $_;
         system 'git', 'rm', '-f', $_;
         system 'rm', '-rf', "$dotfilesdir/$_";
         system 'rm', '-rf', "$home/$_" if($delete);
     }
 
-    system 'git', 'commit', '-am', 'rm: '.join(", ", @rmfiles);
+    system 'git', 'commit', '-am', 'rm: '.join(", ", @_);
     system 'git', 'push';
 }
 
@@ -96,6 +94,7 @@ sub clean
         }
     }
 }
+
 
 die "usage: dotfiles add|rm|pull|push|clean [file ...]\n" if(scalar(@ARGV) == 0);
 (-e $home) or die "cant locale homedir (environement variable HOME is not set)\n";
