@@ -116,7 +116,9 @@ elsif($cmd eq 'push') {
         chdir $dotfilesdir;
         system 'git', 'push';
     }
-    else { &push(); }
+    else {
+        &push();
+    }
 }
 elsif($cmd eq 'clean') {
     &clean();
