@@ -117,6 +117,7 @@ sub install
     }
 }
 
+
 die "usage: dotfiles [-f] add|clean|install|pull|push|rm [file ...]\n" if (scalar(@ARGV) == 0);
 (-e $home) or die "can't locate homedir (environement variable HOME is not set)\n";
 
