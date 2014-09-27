@@ -43,5 +43,3 @@ alias soff='xset dpms force off' #xorg screen off
 
 #Vi mode
 set -o vi
-
-echo "Welcome to `uname -srm` on `hostname | sed 's/\..*//'` !"
