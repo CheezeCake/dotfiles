@@ -13,7 +13,8 @@ case `uname` in
 	;;
 "Linux")
 	plugins=(git archlinux)
-	export PATH=$PATH:~/bin
+	export PATH=$PATH:~/bin:/vbox/archives/glassfish3/glassfish/bin/
+	export CLASSPATH=$CLASSPATH:.:/vbox/archives/glassfish3/glassfish/modules/gf-client.jar:/vbox/archives/glassfish3/glassfish/lib/appserv-rt.jar:/vbox/archives/glassfish3/glassfish/lib/javaee.jar
 	;;
 esac
 
