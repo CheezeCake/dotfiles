@@ -8,13 +8,17 @@ DISABLE_CORRECTION="true"
 case `uname` in
 "Darwin")
 	plugins=(git osx brew)
-	export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:$HOME/bin
+	export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:~/bin
 	alias gpg='gpg2'
 	;;
 "Linux")
 	plugins=(git archlinux)
-	export PATH=$PATH:~/bin:/vbox/archives/glassfish3/glassfish/bin/
-	export CLASSPATH=$CLASSPATH:.:/vbox/archives/glassfish3/glassfish/modules/gf-client.jar:/vbox/archives/glassfish3/glassfish/lib/appserv-rt.jar:/vbox/archives/glassfish3/glassfish/lib/javaee.jar
+	export PATH=$PATH:~/bin:
+
+	if [ `whoami` = 'uapv1202958' ]; then
+		export PATH=$PATH:/vbox/archives/glassfish3/glassfish/bin/
+		export CLASSPATH=$CLASSPATH:.:/vbox/archives/glassfish3/glassfish/modules/gf-client.jar:/vbox/archives/glassfish3/glassfish/lib/appserv-rt.jar:/vbox/archives/glassfish3/glassfish/lib/javaee.jar
+	fi
 	;;
 esac
 
