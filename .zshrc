@@ -13,7 +13,7 @@ case `uname` in
 	;;
 "Linux")
 	plugins=(git archlinux)
-	export PATH=$PATH:~/bin:
+	export PATH=$PATH:~/bin
 
 	if [ `whoami` = 'uapv1202958' ]; then
 		export PATH=$PATH:/vbox/archives/glassfish3/glassfish/bin/
@@ -41,6 +41,7 @@ export PAGER='less -is'
 
 #aliases
 alias S='sudo'
+alias vim='vim -p'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias mk='make'
