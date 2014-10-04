@@ -109,7 +109,7 @@ sub install
 
         if (! -e $f or $force) {
             system 'cp', $repof, $f;
-            print '$f installed', "\n";
+            print "$f installed\n";
         }
         else {
             print "$f exists. Pass -f to override.\n";
