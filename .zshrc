@@ -1,17 +1,17 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="cheezecake_sunrise"
+ZSH_THEME='cheezecake_sunrise'
 
 # CASE_SENSITIVE="true"
 DISABLE_CORRECTION="true"
 
 case `uname` in
-"Darwin")
+'Darwin')
 	plugins=(git osx brew)
 	export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:~/bin
 	alias gpg='gpg2'
 	;;
-"Linux")
+'Linux')
 	plugins=(git archlinux)
 	export PATH=$PATH:~/bin
 
