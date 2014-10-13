@@ -2,8 +2,8 @@ set nocompatible			"no Vi compatibility
 
 "Vundle settings
 filetype off "required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/STL-Syntax'
