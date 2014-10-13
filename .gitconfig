@@ -12,7 +12,7 @@
 	co = checkout
 	df = diff
 	st = status
-#[push]
-	#default = simple
+[push]
+	default = simple
 [core]
 	editor = vim
