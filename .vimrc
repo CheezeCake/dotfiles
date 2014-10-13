@@ -10,6 +10,7 @@ Plugin 'vim-scripts/STL-Syntax'
 Plugin 'CheezeCake/vim-gas'
 Plugin 'Lokaltog/vim-distinguished'
 "Bundle 'Valloric/YouCompleteMe'
+call vundle#end()
 
 "Display settings
 set t_Co=256
