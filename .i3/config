@@ -9,6 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec nm-applet
+
 # Winkey: Mod4
 # alt: Mod1
 set $mod Mod4
