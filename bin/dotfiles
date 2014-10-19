@@ -106,7 +106,7 @@ sub clean
 sub install
 {
     foreach (@_) {
-        $_ = basename($_);
+        $_ =~ s/^$dotfilesdir\///;
         my $repof = "$dotfilesdir/$_";
         my $f = "$home/$_";
 
