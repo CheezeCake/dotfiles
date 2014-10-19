@@ -21,6 +21,9 @@ sub add
     chdir $dotfilesdir;
 
     foreach (@_) {
+        my $dir = dirname($_);
+        system 'mkdir', '-p', $dir if ($dir ne '');
+
         system 'cp', '-r', "$home/$_", "$dotfilesdir/$_";
         system 'git', 'add', $_;
         print "add: $_\n";
