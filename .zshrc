@@ -49,3 +49,7 @@ alias soff='xset dpms force off' #xorg screen off
 
 #Vi mode
 set -o vi
+
+#oh-my-zsh fix
+bindkey '\eOA' up-line-or-search
+bindkey '\eOB' down-line-or-search
