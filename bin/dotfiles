@@ -50,7 +50,7 @@ sub push
 
     my $change = 1; # value 1 for force option
 
-    if (!$force) {
+    if (not $force) {
         $change = 0;
 
         foreach (@repofiles) {
@@ -103,16 +103,21 @@ sub clean
 sub install
 {
     foreach (@_) {
-        $_ =~ s/^$dotfilesdir\///;
+        $_ = basename($_);
         my $repof = "$dotfilesdir/$_";
         my $f = "$home/$_";
 
-        if (! -e $f or $force) {
-            system 'cp', $repof, $f;
-            print "$f installed\n";
+        if (-e $repof) {
+            if (not -e $f or $force) {
+                system 'cp', $repof, $f;
+                print "$f installed\n";
+            }
+            else {
+                print "$f exists. Pass -f to override.\n";
+            }
         }
         else {
-            print "$f exists. Pass -f to override.\n";
+            print "$_ not found\n";
         }
     }
 }
