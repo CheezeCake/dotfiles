@@ -10,6 +10,7 @@ Plugin 'vim-scripts/STL-Syntax'
 Plugin 'CheezeCake/vim-gas'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
 "Bundle 'Valloric/YouCompleteMe'
 call vundle#end()
 
