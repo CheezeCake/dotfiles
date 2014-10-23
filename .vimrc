@@ -9,6 +9,7 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/STL-Syntax'
 Plugin 'CheezeCake/vim-gas'
 Plugin 'Lokaltog/vim-distinguished'
+Plugin 'tpope/vim-commentary'
 "Bundle 'Valloric/YouCompleteMe'
 call vundle#end()
 
