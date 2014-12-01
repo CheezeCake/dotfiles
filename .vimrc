@@ -11,6 +11,7 @@ Plugin 'CheezeCake/vim-gas'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
 "Bundle 'Valloric/YouCompleteMe'
 call vundle#end()
 
