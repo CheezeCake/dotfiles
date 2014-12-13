@@ -68,10 +68,6 @@ autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
 autocmd FileType perl setlocal sts=4 sw=4 et
 
 "mapings
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 vnoremap <C-c> "+y
 
