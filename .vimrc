@@ -68,7 +68,9 @@ autocmd FileType perl setlocal sts=4 sw=4 et
 
 "mapings
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-vnoremap <C-c> "+y
+if has("clipboard")
+	vnoremap <C-c> "+y
+endif
 
 
 "Plugin configuration
