@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 exec nm-applet
+exec redshift-gtk
 
 # Winkey: Mod4
 # alt: Mod1
