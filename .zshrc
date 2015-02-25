@@ -7,6 +7,7 @@ DISABLE_CORRECTION="true"
 
 plugins=(git colored-man sudo)
 
+
 case `uname` in
 'Darwin')
 	plugins+=(osx brew)
@@ -15,10 +16,10 @@ case `uname` in
 	;;
 'Linux')
 	plugins+=(archlinux)
-	export PATH=$PATH:~/bin
+	export PATH=~/bin:$PATH
 
 	if [ `whoami` = 'uapv1202958' ]; then
-		export PATH=$PATH:/vbox/archives/glassfish3/glassfish/bin/
+		export PATH=$PATH:~/opt/bin:/vbox/archives/glassfish3/glassfish/bin/
 		export CLASSPATH=$CLASSPATH:.:/vbox/archives/glassfish3/glassfish/modules/gf-client.jar:/vbox/archives/glassfish3/glassfish/lib/appserv-rt.jar:/vbox/archives/glassfish3/glassfish/lib/javaee.jar
 	fi
 	;;
