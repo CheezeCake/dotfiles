@@ -16,6 +16,8 @@ my $delete;
 my $force;
 GetOptions('d' => \$delete, 'f' => \$force) or die ("Error in command line arguments\n");
 
+my @ignorelist;
+
 sub add
 {
     chdir $dotfilesdir;
@@ -57,14 +59,21 @@ sub push
         $change = 0;
 
         foreach (@repofiles) {
-            chomp;
-            my $f = "$home/$_";
-            my $repof = "$dotfilesdir/$_";
+            if (not $_ ~~ @ignorelist) {
+                chomp;
+                my $f = "$home/$_";
+                my $repof = "$dotfilesdir/$_";
 
-            if (compare($f, $repof) == 1) {
-                system 'cp', $f, $repof;
-                system 'git', 'commit', '-am', 'update: '.basename($f);
-                $change = 1;
+                if (compare($f, $repof) == 1) {
+                    system 'cp', $f, $repof;
+                    system 'git', 'commit', '-am', 'update: '.basename($f);
+                    $change = 1;
+                }
+            }
+            else {
+                my $f = $_;
+                $f =~ s/(.*)\n/$1/;
+                print $f, ' ignored', "\n";
             }
         }
     }
@@ -78,14 +87,21 @@ sub pull
 
     system 'git', 'pull';
     foreach (@repofiles) {
-        chomp;
-        my $f = "$home/$_";
-        my $repof = "$dotfilesdir/$_";
+        if (not $_ ~~ @ignorelist) {
+            chomp;
+            my $f = "$home/$_";
+            my $repof = "$dotfilesdir/$_";
 
-        if (compare($f, $repof) == 1) {
-            system 'mv', $f, "$f.old";
-            system 'cp', $repof, $f;
-            print "$f saved as $f.old\n";
+            if (compare($f, $repof) == 1) {
+                system 'mv', $f, "$f.old";
+                system 'cp', $repof, $f;
+                print "$f saved as $f.old\n";
+            }
+        }
+        else {
+            my $f = $_;
+            $f =~ s/(.*)\n/$1/;
+            print $f, ' ignored', "\n";
         }
     }
 }
@@ -128,6 +144,17 @@ sub install
 
 die "usage: dotfiles [-f] add|clean|install|pull|push|rm [file ...]\n" if (scalar(@ARGV) == 0);
 (-e $home) or die "can't locate homedir (environement variable HOME is not set)\n";
+
+my $ignorefile = $home.'/.dotfiles.ignore';
+
+if (-e $ignorefile) {
+    my $ignorefilehandle;
+    open $ignorefilehandle, $ignorefile;
+    while (my $line = <$ignorefilehandle>) {
+        CORE::push(@ignorelist, $line);
+    }
+    close $ignorefilehandle;
+}
 
 my %cmd_functions = (
     'add' => \&add,
