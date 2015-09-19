@@ -14,7 +14,7 @@ my @repofiles = `git --git-dir=$dotfilesdir/.git ls-files`;
 #arguments
 my $delete;
 my $force;
-GetOptions('d' => \$delete, 'f' => \$force) or die ("Error in command line arguments\n");
+GetOptions('d' => \$delete, 'f' => \$force) or die 'Error in command line arguments';
 
 my @ignorelist;
 
@@ -55,11 +55,16 @@ sub push
 
     my $change = 1; # value 1 for force option
 
-    if (not $force) {
+    unless ($force) {
         $change = 0;
 
         foreach (@repofiles) {
-            if (not $_ ~~ @ignorelist) {
+            if ($_ ~~ @ignorelist) {
+                my $f = $_;
+                $f =~ s/(.*)\n/$1/;
+                print $f, ' ignored', "\n";
+            }
+            else {
                 chomp;
                 my $f = "$home/$_";
                 my $repof = "$dotfilesdir/$_";
@@ -69,11 +74,6 @@ sub push
                     system 'git', 'commit', '-am', 'update: '.basename($f);
                     $change = 1;
                 }
-            }
-            else {
-                my $f = $_;
-                $f =~ s/(.*)\n/$1/;
-                print $f, ' ignored', "\n";
             }
         }
     }
@@ -88,6 +88,11 @@ sub pull
     system 'git', 'pull';
     foreach (@repofiles) {
         if (not $_ ~~ @ignorelist) {
+            my $f = $_;
+            $f =~ s/(.*)\n/$1/;
+            print $f, ' ignored', "\n";
+        }
+        else {
             chomp;
             my $f = "$home/$_";
             my $repof = "$dotfilesdir/$_";
@@ -97,11 +102,6 @@ sub pull
                 system 'cp', $repof, $f;
                 print "$f saved as $f.old\n";
             }
-        }
-        else {
-            my $f = $_;
-            $f =~ s/(.*)\n/$1/;
-            print $f, ' ignored', "\n";
         }
     }
 }
@@ -142,8 +142,8 @@ sub install
 }
 
 
-die "usage: dotfiles [-f] add|clean|install|pull|push|rm [file ...]\n" if (scalar(@ARGV) == 0);
-(-e $home) or die "can't locate homedir (environement variable HOME is not set)\n";
+die 'usage: dotfiles [-f] add|clean|install|pull|push|rm [file ...]' if (scalar(@ARGV) == 0);
+(-e $home) or die 'can\'t locate homedir (environement variable HOME is not set)';
 
 my $ignorefile = $home.'/.dotfiles.ignore';
 
