@@ -87,7 +87,7 @@ sub pull
 
     system 'git', 'pull';
     foreach (@repofiles) {
-        if (not $_ ~~ @ignorelist) {
+        if ($_ ~~ @ignorelist) {
             my $f = $_;
             $f =~ s/(.*)\n/$1/;
             print $f, ' ignored', "\n";
