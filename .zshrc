@@ -5,7 +5,7 @@ ZSH_THEME='cheezecake_sunrise'
 # CASE_SENSITIVE="true"
 DISABLE_CORRECTION="true"
 
-plugins=(git colored-man sudo)
+plugins=(git colored-man-pages sudo)
 
 
 case `uname` in
