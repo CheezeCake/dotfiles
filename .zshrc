@@ -7,7 +7,6 @@ DISABLE_CORRECTION="true"
 
 plugins=(git colored-man-pages sudo)
 
-
 case `uname` in
 'Darwin')
 	plugins+=(osx brew)
