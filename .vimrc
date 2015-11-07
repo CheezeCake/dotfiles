@@ -4,7 +4,7 @@ set nocompatible			"no Vi compatibility
 filetype off "required!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/STL-Syntax'
 Plugin 'CheezeCake/vim-gas'
