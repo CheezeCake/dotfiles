@@ -10,10 +10,10 @@ Plugin 'vim-scripts/STL-Syntax'
 Plugin 'CheezeCake/vim-gas'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-"Plugin 'scrooloose/syntastic'
-"Bundle 'Valloric/YouCompleteMe'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'scrooloose/syntastic'
+" Bundle 'Valloric/YouCompleteMe'
 call vundle#end()
 
 "Display settings
