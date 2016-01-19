@@ -16,12 +16,6 @@ case `uname` in
 'Linux')
 	plugins+=(archlinux)
 	export PATH=~/bin:$PATH
-
-	if [ `whoami` = 'uapv1202958' ]; then
-		export PATH=$PATH:~/opt/bin:/vbox/archives/glassfish3/glassfish/bin:~/.linuxbrew/bin
-		export CLASSPATH=$CLASSPATH:.:/vbox/archives/glassfish3/glassfish/modules/gf-client.jar:/vbox/archives/glassfish3/glassfish/lib/appserv-rt.jar:/vbox/archives/glassfish3/glassfish/lib/javaee.jar
-	fi
-	;;
 esac
 
 source $ZSH/oh-my-zsh.sh
