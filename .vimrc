@@ -64,7 +64,6 @@ autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
 autocmd FileType c,cpp abbr #d #define
 autocmd FileType c,cpp abbr #i #include
 autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
-autocmd FileType perl setlocal sts=4 sw=4 et
 
 "mapings
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
