@@ -25,7 +25,7 @@ set number
 set fillchars+=stl:\ ,stlnc:\
 set laststatus=2
 if has("gui")
-	set guifont=Droid\ Sans\ Mono\ for\ Powerline
+	set guifont=Source\ Code\ Pro\ Medium\ 11
 endif
 
 syntax on
