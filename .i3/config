@@ -25,8 +25,8 @@ for_window [window_role="task_dialog"] floating enable
 # mpv floating
 for_window [class="mpv"] floating enable
 
-# thunderbird in workspace 0
-assign [class="Thunderbird"] 0
+# thunderbird in workspace 10
+assign [class="Thunderbird"] 10
 
 # Winkey: Mod4
 # alt: Mod1
