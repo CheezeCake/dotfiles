@@ -11,6 +11,7 @@ Plugin 'vim-scripts/STL-Syntax'
 Plugin 'CheezeCake/vim-gas'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'scrooloose/nerdtree'
 " Plugin 'jistr/vim-nerdtree-tabs'
 " Plugin 'scrooloose/syntastic'
@@ -25,7 +26,7 @@ set number
 set fillchars+=stl:\ ,stlnc:\
 set laststatus=2
 if has("gui")
-	set guifont=Droid\ Sans\ Mono\ for\ Powerline
+	set guifont=Source\ Code\ Pro\ Medium\ 11
 endif
 
 syntax on
@@ -80,3 +81,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline_section_z = "%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#:%3v"
+
+"Ctrlp
+let g:ctrl_map = '<C-p>'
+let g:ctrlp_custom_ignore = '\v\.(o|so|dylib|a)$'
