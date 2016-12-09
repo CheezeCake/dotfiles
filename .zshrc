@@ -9,7 +9,7 @@ plugins=(git colored-man-pages sudo)
 
 case `uname` in
 'Darwin')
-	plugins+=(osx brew)
+	plugins+=(osx)
 	export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:~/bin:/usr/local/texlive/2015/bin/x86_64-darwin
 	alias gpg='gpg2'
 	;;
