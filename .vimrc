@@ -56,6 +56,7 @@ set showcmd
 set title
 "for tmux
 set t_ut=
+set tabpagemax=100
 
 "colorscheme
 colorscheme wombat
