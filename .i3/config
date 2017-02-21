@@ -48,7 +48,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
-bindsym $mod+x exec scrot
 
 # kill focused window
 bindsym $mod+Shift+q kill
