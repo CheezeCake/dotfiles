@@ -32,6 +32,7 @@ alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias mk='make'
 alias soff='xset dpms force off' #xorg screen off
+alias bin2sc='hexdump -v -e '"'"'"\\""x" 1/1 "%02x"'"'"
 
 #Vi mode
 set -o vi
