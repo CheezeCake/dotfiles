@@ -27,6 +27,9 @@ for_window [window_role="task_dialog"] floating enable
 # mpv floating
 for_window [class="mpv"] floating enable
 
+# QEMU floating
+for_window [title="QEMU"] floating enable
+
 # thunderbird in workspace 10
 assign [class="Thunderbird"] 10
 
