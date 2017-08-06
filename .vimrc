@@ -86,3 +86,4 @@ let g:airline_section_z = "%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%
 "Ctrlp
 let g:ctrl_map = '<C-p>'
 let g:ctrlp_custom_ignore = '\v\.(o|so|dylib|a)$'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
