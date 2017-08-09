@@ -24,11 +24,10 @@ hide_edge_borders vertical
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
-# mpv floating
+# floating
 for_window [class="mpv"] floating enable
-
-# QEMU floating
 for_window [title="QEMU"] floating enable
+for_window [title="Qalculate"] floating enable
 
 # thunderbird in workspace 10
 assign [class="Thunderbird"] 10
