@@ -14,7 +14,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'scrooloose/nerdtree'
 " Plugin 'jistr/vim-nerdtree-tabs'
-" Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
@@ -45,7 +44,6 @@ set cindent
 "general
 set backspace=indent,eol,start
 set ttyfast
-"set shell=zsh
 set wildmenu
 set wildmode=full
 set mouse=a
@@ -70,9 +68,7 @@ autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
 
 "mapings
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-if has("clipboard")
-	vnoremap <C-c> "+y
-endif
+vnoremap <C-c> "+y
 
 
 "Plugin configuration
