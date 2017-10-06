@@ -38,7 +38,9 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set noexpandtab
+set smarttab
 set cindent
+set cino=(0
 
 "general
 set backspace=indent,eol,start
@@ -66,7 +68,7 @@ if has('autocmd')
 	autocmd FileType c,cpp abbr #d #define
 	autocmd FileType c,cpp abbr #i #include
 	autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
-	autocmd FileType scheme setlocal lisp ts=2 sts=2 sw=2 et
+	autocmd FileType scheme setlocal lisp nocindent smartindent ts=2 sts=2 sw=2 et
 endif
 
 "mapings
