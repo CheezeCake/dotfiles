@@ -23,7 +23,7 @@ set number
 "set textwidth=70
 set fillchars+=stl:\ ,stlnc:\
 set laststatus=2
-if has("gui")
+if has('gui')
 	set guifont=Source\ Code\ Pro\ Medium\ 11
 endif
 
@@ -36,6 +36,7 @@ filetype indent on
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set shiftround
 set noexpandtab
 set cindent
 
@@ -48,6 +49,7 @@ set mouse=a
 set incsearch
 set hlsearch
 set ignorecase
+set smartcase
 set encoding=utf-8
 set showcmd
 set title
@@ -58,11 +60,14 @@ set tabpagemax=100
 "colorscheme
 colorscheme wombat
 
-"assembly: GAS syntax (AT&T)
-autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
-autocmd FileType c,cpp abbr #d #define
-autocmd FileType c,cpp abbr #i #include
-autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
+if has('autocmd')
+	"assembly: GAS syntax (AT&T)
+	autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
+	autocmd FileType c,cpp abbr #d #define
+	autocmd FileType c,cpp abbr #i #include
+	autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
+	autocmd FileType scheme setlocal lisp ts=2 sts=2 sw=2 et
+endif
 
 "mapings
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
