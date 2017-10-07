@@ -17,7 +17,6 @@ call vundle#end()
 
 "Display settings
 set t_Co=256
-set background=dark
 set cursorline
 set number
 "set textwidth=70
