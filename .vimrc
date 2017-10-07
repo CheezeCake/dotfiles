@@ -7,8 +7,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-scripts/STL-Syntax'
 Plugin 'CheezeCake/vim-gas'
+Plugin 'Mizuchi/STL-Syntax'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -39,6 +39,7 @@ set shiftwidth=4
 set shiftround
 set noexpandtab
 set smarttab
+set autoindent
 set cindent
 set cino=(0
 
@@ -62,14 +63,9 @@ set tabpagemax=100
 "colorscheme
 colorscheme wombat
 
-if has('autocmd')
-	"assembly: GAS syntax (AT&T)
-	autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
-	autocmd FileType c,cpp abbr #d #define
-	autocmd FileType c,cpp abbr #i #include
-	autocmd FileType cpp source ~/.vim/bundle/STL-Syntax/syntax/stl.vim
-	autocmd FileType scheme setlocal lisp nocindent smartindent ts=2 sts=2 sw=2 et
-endif
+"assembly: GAS syntax (AT&T)
+autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
+autocmd FileType scheme setlocal lisp lispwords-=if nocindent ts=2 sts=2 sw=2 et
 
 "mapings
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
