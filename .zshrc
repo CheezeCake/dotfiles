@@ -5,7 +5,7 @@ ZSH_THEME='cheezecake_sunrise'
 # CASE_SENSITIVE="true"
 DISABLE_CORRECTION="true"
 
-plugins=(git colored-man-pages sudo)
+plugins=(git colored-man-pages)
 
 case `uname` in
 'Darwin')
