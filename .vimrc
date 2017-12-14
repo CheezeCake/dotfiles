@@ -67,9 +67,18 @@ autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
 autocmd FileType scheme setlocal lisp lispwords-=if nocindent ts=2 sts=2 sw=2 et
 
 "mapings
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-nnoremap H gT
-nnoremap L gt
+
+noremap gT <Nop>
+noremap gt <Nop>
+nnoremap <silent> H :tabp<CR>
+nnoremap <silent> L :tabn<CR>
+
 vnoremap <C-c> "+y
 
 
