@@ -68,6 +68,8 @@ autocmd FileType scheme setlocal lisp lispwords-=if nocindent ts=2 sts=2 sw=2 et
 
 "mapings
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+nnoremap H gT
+nnoremap L gt
 vnoremap <C-c> "+y
 
 
