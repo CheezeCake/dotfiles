@@ -79,8 +79,8 @@ noremap gt <Nop>
 nnoremap <silent> H :tabp<CR>
 nnoremap <silent> L :tabn<CR>
 
-nnoremap <silent> <C-Left> :tabm -1<CR>
-nnoremap <silent> <C-Right> :tabm +1<CR>
+nnoremap <silent> <S-Left> :tabm -1<CR>
+nnoremap <silent> <S-Right> :tabm +1<CR>
 
 vnoremap <C-c> "+y
 
