@@ -74,8 +74,8 @@ noremap <Right> <Nop>
 
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
-noremap gT <Nop>
-noremap gt <Nop>
+nnoremap gT <Nop>
+nnoremap gt <Nop>
 nnoremap <silent> H :tabp<CR>
 nnoremap <silent> L :tabn<CR>
 
@@ -84,6 +84,14 @@ nnoremap <silent> <S-Right> :tabm +1<CR>
 
 vnoremap <C-c> "+y
 
+" noremap c h
+" noremap r l
+" noremap t j
+" noremap s k
+" noremap C H
+" noremap R L
+" noremap T J
+" noremap S K
 
 "Plugin configuration
 
