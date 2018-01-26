@@ -84,14 +84,11 @@ nnoremap <silent> <S-Right> :tabm +1<CR>
 
 vnoremap <C-c> "+y
 
-" noremap c h
-" noremap r l
-" noremap t j
-" noremap s k
-" noremap C H
-" noremap R L
-" noremap T J
-" noremap S K
+noremap wj <C-w>j
+noremap wk <C-w>k
+noremap wh <C-w>h
+noremap wl <C-w>l
+
 
 "Plugin configuration
 
