@@ -84,10 +84,8 @@ nnoremap <silent> <S-Right> :tabm +1<CR>
 
 vnoremap <C-c> "+y
 
-noremap wj <C-w>j
-noremap wk <C-w>k
-noremap wh <C-w>h
-noremap wl <C-w>l
+nnoremap w <C-w>
+nnoremap W <C-w><C-w>
 
 
 "Plugin configuration
@@ -97,7 +95,7 @@ let g:airline_theme = 'murmur'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
-let g:airline_section_z = "%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#:%3v"
+let g:airline_section_z = '%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#:%3v'
 
 "Ctrlp
 let g:ctrl_map = '<C-p>'
