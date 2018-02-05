@@ -84,9 +84,6 @@ nnoremap <silent> <S-Right> :tabm +1<CR>
 
 vnoremap <C-c> "+y
 
-nnoremap w <C-w>
-nnoremap W <C-w><C-w>
-
 
 "Plugin configuration
 
