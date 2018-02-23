@@ -40,3 +40,6 @@ set -o vi
 #oh-my-zsh fix
 bindkey '\eOA' up-line-or-search
 bindkey '\eOB' down-line-or-search
+
+# disable start/stop output control
+stty -ixon
