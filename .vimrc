@@ -1,35 +1,5 @@
 set nocompatible			"no Vi compatibility
 
-" " [HJKL] -> {CTSR}
-" " ————————————————
-" " {cr} = « gauche / droite »
-" noremap c h
-" noremap r l
-" " {ts} = « haut / bas »
-" noremap t j
-" noremap s k
-" " {CR} = « haut / bas de l'écran »
-" nmap C H
-" nmap R L
-" " {TS} = « joindre / aide »
-" noremap T J
-" noremap S K
-
-" " {HJKL} <- [CTSR]
-" " ————————————————
-" " {J} = « Jusqu'à »            (j = suivant, J = précédant)
-" noremap j t
-" noremap J T
-" " {L} = « Change »             (l = attend un mvt, L = jusqu'à la fin de ligne)
-" noremap l c
-" noremap L C
-" " {H} = « Remplace »           (h = un caractère slt, H = reste en « Remplace »)
-" noremap h r
-" noremap H R
-" " {K} = « Substitue »          (k = caractère, K = ligne)
-" noremap k s
-" noremap K S
-
 "Vundle settings
 filetype off "required!
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -43,6 +13,7 @@ Plugin 'tpope/vim-commentary'
 " Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 
 "Display settings
@@ -93,7 +64,7 @@ set tabpagemax=100
 colorscheme wombat
 
 "assembly: GAS syntax (AT&T)
-autocmd FileType asm,vmasm setlocal ft=gas ts=8 sts=8 sw=8 noet
+autocmd FileType asm,vmasm setlocal ft=gas nocindent
 autocmd FileType scheme setlocal lisp lispwords-=if nocindent ts=2 sts=2 sw=2 et
 
 "mapings
@@ -127,12 +98,6 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:ctrl_map = '<C-p>'
 let g:ctrlp_custom_ignore = '\v\.(o|so|dylib|a)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-" let g:ctrlp_prompt_mappings = {
-" 			\ 'AcceptSelection("h")': ['<c-x>', '<c-cr>'],
-" 			\ 'PrtSelectMove("j")':   ['<c-t>', '<down>'],
-" 			\ 'PrtSelectMove("k")':   ['<c-s>', '<up>'],
-" 			\ 'AcceptSelection("t")': ['<c-j>'],
-" 			\ }
 
 "YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
