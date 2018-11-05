@@ -15,6 +15,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 "Display settings
