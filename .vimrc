@@ -14,8 +14,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'rust-lang/rust.vim'
-Plugin 'fatih/vim-go'
+Plugin 'w0rp/ale'
 call vundle#end()
 
 "Display settings
@@ -67,7 +66,6 @@ colorscheme wombat
 
 "assembly: GAS syntax (AT&T)
 autocmd FileType asm,vmasm setlocal ft=gas nocindent
-autocmd FileType scheme setlocal lisp lispwords-=if nocindent ts=2 sts=2 sw=2 et
 
 "mapings
 noremap <Up> <Nop>
@@ -105,3 +103,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 "YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+"ALE
+let g:ale_linters_explicit = 1
+let g:ale_completion_enabled = 0
