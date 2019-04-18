@@ -17,7 +17,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'w0rp/ale'
 call vundle#end()
 
-set lw+=match
 "Display settings
 set t_Co=256
 set cursorline
