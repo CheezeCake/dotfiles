@@ -17,6 +17,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'w0rp/ale'
 call vundle#end()
 
+set lw+=match
 "Display settings
 set t_Co=256
 set cursorline
@@ -105,5 +106,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "ALE
+let g:ale_fix_on_save = 1
 let g:ale_linters_explicit = 1
 let g:ale_completion_enabled = 0
