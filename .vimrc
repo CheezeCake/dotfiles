@@ -42,7 +42,7 @@ set noexpandtab
 set smarttab
 set autoindent
 set cindent
-set cino=(0
+set cino=:0,l1,t0,g0,(0
 
 "general
 set backspace=indent,eol,start
@@ -66,6 +66,8 @@ colorscheme wombat
 
 "assembly: GAS syntax (AT&T)
 autocmd FileType asm,vmasm setlocal ft=gas nocindent
+
+autocmd BufNewFile,BufRead *.dart setlocal ft=dart
 
 "mapings
 noremap <Up> <Nop>
