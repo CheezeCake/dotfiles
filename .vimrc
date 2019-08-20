@@ -85,8 +85,6 @@ nnoremap <silent> L :tabn<CR>
 nnoremap <silent> <S-Left> :tabm -1<CR>
 nnoremap <silent> <S-Right> :tabm +1<CR>
 
-nnoremap W <C-w>
-
 vnoremap <C-c> "+y
 
 
