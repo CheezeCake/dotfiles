@@ -28,6 +28,7 @@ for_window [window_role="task_dialog"] floating enable
 for_window [class="mpv"] floating enable
 for_window [title="QEMU"] floating enable
 for_window [title="Qalculate"] floating enable
+for_window [title="qalculate-gtk"] floating enable
 
 # thunderbird in workspace 10
 assign [class="Thunderbird"] 10
