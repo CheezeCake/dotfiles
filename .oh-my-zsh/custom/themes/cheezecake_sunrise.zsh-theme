@@ -16,10 +16,10 @@ M=$fg_no_bold[magenta]
 Y=$fg_no_bold[yellow]
 B=$fg_no_bold[blue]
 RESET=$reset_color
-GR=$fg[grey]
+GR=%F{240}
 
 GIT_PROMPT="\$(git_prompt_info)"
-PROMPT="%B%{$GR%}%n %{$FG[027]%}%c%{$RESET%} $GIT_PROMPT%{$R%}%B»%b%{$RESET%} "
+PROMPT="%B%{$GR%}%n %f%{$FG[027]%}%c%{$RESET%} $GIT_PROMPT%{$R%}%B»%b%{$RESET%} "
 # RPS1="%(?..%{$R%}%? ↵%{$RESET%})"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$Y%}‹"
