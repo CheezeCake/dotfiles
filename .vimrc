@@ -57,6 +57,8 @@ set smartcase
 set encoding=utf-8
 set showcmd
 set title
+set splitbelow
+set splitright
 "for tmux
 set t_ut=
 set tabpagemax=100
