@@ -15,6 +15,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'w0rp/ale'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 call vundle#end()
 
 "Display settings
@@ -64,7 +65,7 @@ set t_ut=
 set tabpagemax=100
 
 "colorscheme
-colorscheme wombat
+colorscheme dracula
 
 "assembly: GAS syntax (AT&T)
 autocmd FileType asm,vmasm setlocal ft=gas nocindent
